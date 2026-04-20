@@ -76,3 +76,31 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+const slides = document.querySelectorAll(".slide");
+let index = 0;
+
+function showSlide(i) {
+  slides.forEach((slide, idx) => {
+    slide.style.transform = `translateX(${(idx - i) * 100}%)`;
+  });
+}
+
+document.getElementById("next").onclick = () => {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+};
+
+document.getElementById("prev").onclick = () => {
+  index = (index - 1 + slides.length) % slides.length;
+  showSlide(index);
+};
+
+// AUTO SLIDE
+setInterval(() => {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+}, 5000);
+
+// INIT
+showSlide(index);
