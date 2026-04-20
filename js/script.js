@@ -29,3 +29,19 @@ window.addEventListener("scroll", () => {
     navbar.style.boxShadow = "none";
   }
 });
+
+// FADE-IN ON SCROLL
+const faders = document.querySelectorAll(".fade-in");
+
+const appearOnScroll = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  },
+  { threshold: 0.2 }
+);
+
+faders.forEach(el => appearOnScroll.observe(el));
