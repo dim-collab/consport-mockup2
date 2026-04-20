@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  // ===== COUNTERS =====
   const counters = document.querySelectorAll(".stats h3");
 
   counters.forEach(counter => {
@@ -17,90 +19,102 @@ document.addEventListener("DOMContentLoaded", () => {
 
     update();
   });
+
+  // ===== HERO SLIDER =====
+  const slides = document.querySelectorAll(".slide");
+
+  if (slides.length > 0) {
+    let index = 0;
+
+    function showSlide(i) {
+      slides.forEach((slide, idx) => {
+        slide.style.transform = `translateX(${(idx - i) * 100}%)`;
+      });
+    }
+
+    const next = document.getElementById("next");
+    const prev = document.getElementById("prev");
+
+    if (next && prev) {
+      next.onclick = () => {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+      };
+
+      prev.onclick = () => {
+        index = (index - 1 + slides.length) % slides.length;
+        showSlide(index);
+      };
+    }
+
+    setInterval(() => {
+      index = (index + 1) % slides.length;
+      showSlide(index);
+    }, 5000);
+
+    showSlide(index);
+  }
+
+  // ===== MOBILE MENU =====
+  const toggle = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".nav-links");
+
+  if (toggle && nav) {
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  }
+
 });
 
-// NAVBAR SHADOW ON SCROLL
+// NAVBAR SHADOW
 window.addEventListener("scroll", () => {
   const navbar = document.querySelector(".navbar");
 
-  if (window.scrollY > 50) {
-    navbar.style.boxShadow = "0 2px 10px rgba(0,0,0,0.1)";
-  } else {
-    navbar.style.boxShadow = "none";
+  if (navbar) {
+    navbar.style.boxShadow =
+      window.scrollY > 50
+        ? "0 2px 10px rgba(0,0,0,0.1)"
+        : "none";
   }
 });
 
-// FADE-IN ON SCROLL
-const faders = document.querySelectorAll(".fade-in");
+// FADE-IN
+if (document.querySelectorAll(".fade-in").length > 0) {
+  const faders = document.querySelectorAll(".fade-in");
 
-const appearOnScroll = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  },
-  { threshold: 0.2 }
-);
+  const appearOnScroll = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
 
-faders.forEach(el => appearOnScroll.observe(el));
-
-// MOBILE MENU
-const toggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".nav-links");
-
-toggle.addEventListener("click", () => {
-  nav.classList.toggle("active");
-});
-
-// ACTIVE MENU ON SCROLL
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-links a");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
-
-    if (scrollY >= sectionTop) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach(a => {
-    a.classList.remove("active");
-    if (a.getAttribute("href") === "#" + current) {
-      a.classList.add("active");
-    }
-  });
-});
-
-const slides = document.querySelectorAll(".slide");
-let index = 0;
-
-function showSlide(i) {
-  slides.forEach((slide, idx) => {
-    slide.style.transform = `translateX(${(idx - i) * 100}%)`;
-  });
+  faders.forEach(el => appearOnScroll.observe(el));
 }
 
-document.getElementById("next").onclick = () => {
-  index = (index + 1) % slides.length;
-  showSlide(index);
-};
+// ACTIVE MENU
+if (sections.length > 0 && navLinks.length > 0) {
+  window.addEventListener("scroll", () => {
+    let current = "";
 
-document.getElementById("prev").onclick = () => {
-  index = (index - 1 + slides.length) % slides.length;
-  showSlide(index);
-};
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 100;
 
-// AUTO SLIDE
-setInterval(() => {
-  index = (index + 1) % slides.length;
-  showSlide(index);
-}, 5000);
+      if (scrollY >= sectionTop) {
+        current = section.getAttribute("id");
+      }
+    });
 
-// INIT
-showSlide(index);
+    navLinks.forEach(a => {
+      a.classList.remove("active");
+      if (a.getAttribute("href") === "#" + current) {
+        a.classList.add("active");
+      }
+    });
+  });
+}
