@@ -92,6 +92,7 @@ html {
   left: 10%;
   transform: translateY(-50%);
   color: #fff;
+  z-index: 2; /* 🔥 THIS FIXES IT */
 }
 
 .hero-content h1 {
@@ -109,6 +110,7 @@ html {
   position: absolute;
   inset: 0;
   background: rgba(0,0,0,0.4);
+  z-index: 1;
 }
 
 /* ARROWS */
