@@ -42,6 +42,11 @@ html {
   color: #2e7d32;
 }
 
+.nav-links a.active {
+  color: #2e7d32;
+  border-bottom: 2px solid #ff6f00;
+}
+
 /* HERO */
 .hero {
   height: 90vh;
