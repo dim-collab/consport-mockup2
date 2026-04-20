@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  color: #000;
+}
+
+/* NAVBAR */
+.navbar {
+  background: #fff;
+  border-bottom: 3px solid #2e7d32;
+  padding: 15px 0;
+}
+
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #2e7d32;
+  font-size: 24px;
+}
+
+.navbar a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #000;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #2e7d32;
+}
+
+/* HERO */
+.hero {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  background: linear-gradient(120deg, #e8f5e9, #fff3e0);
+}
+
+.hero h1 {
+  font-size: 48px;
+  color: #2e7d32;
+}
+
+.hero p {
+  margin: 15px 0;
+  font-size: 18px;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  background: #ff6f00;
+  color: #fff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #2e7d32;
+  transform: translateY(-3px);
+}
+
+/* FEATURES */
+.features {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.features h2 {
+  margin-bottom: 40px;
+  color: #2e7d32;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  border-top: 4px solid #ff6f00;
+}
+
+.card h3 {
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+/* STATS (KDF STYLE) */
+.stats {
+  background: #2e7d32;
+  color: #fff;
+  padding: 60px 10%;
+  text-align: center;
+}
+
+.stats-grid {
+  display: flex;
+  justify-content: space-around;
+}
+
+.stats h3 {
+  font-size: 36px;
+}
+
+/* CTA */
+.cta {
+  padding: 80px 10%;
+  text-align: center;
+  background: #fff;
+}
+
+.cta h2 {
+  margin-bottom: 20px;
+  color: #2e7d32;
+}
