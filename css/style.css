@@ -93,16 +93,36 @@ html {
   left: 10%;
   transform: translateY(-50%);
   color: #fff;
-  z-index: 2; /* 🔥 THIS FIXES IT */
+  z-index: 2;
+  max-width: 600px;
+
+  /* animation */
+  opacity: 0;
+  animation: fadeHero 1s ease forwards;
 }
 
 .hero-content h1 {
-  font-size: 50px;
+  font-size: 64px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  line-height: 1.1;
 }
 
 .hero-content p {
-  margin: 15px 0;
-  font-size: 18px;
+  font-size: 20px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+@keyframes fadeHero {
+  from {
+    opacity: 0;
+    transform: translateY(calc(-50% + 40px));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
 }
 
 /* overlay for readability */
@@ -110,7 +130,11 @@ html {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.4);
+  background: linear-gradient(
+    to right,
+    rgba(0,0,0,0.6),
+    rgba(0,0,0,0.2)
+  );
   z-index: 1;
 }
 
@@ -132,17 +156,26 @@ html {
 /* BUTTON */
 .btn {
   display: inline-block;
-  padding: 12px 28px;
+  padding: 14px 34px;              /* slightly bigger */
   background: #ff6f00;
   color: #fff;
-  border-radius: 5px;
+  border-radius: 6px;
   text-decoration: none;
-  transition: 0.3s;
+  font-weight: 600;                /* 🔥 more premium */
+  letter-spacing: 0.5px;           /* subtle detail */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* depth */
 }
 
 .btn:hover {
   background: #2e7d32;
   transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
 
 /* FEATURES */
