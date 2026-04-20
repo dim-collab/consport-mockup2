@@ -119,9 +119,13 @@ html {
 
 /* STATS (KDF STYLE) */
 .stats {
-  background: #2e7d32;
+  background: linear-gradient(rgba(46,125,50,0.9), rgba(46,125,50,0.9)),
+              url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* PARALLAX */
   color: #fff;
-  padding: 60px 10%;
+  padding: 80px 10%;
   text-align: center;
 }
 
