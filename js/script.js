@@ -45,3 +45,11 @@ const appearOnScroll = new IntersectionObserver(
 );
 
 faders.forEach(el => appearOnScroll.observe(el));
+
+// MOBILE MENU
+const toggle = document.querySelector(".menu-toggle");
+const nav = document.querySelector(".nav-links");
+
+toggle.addEventListener("click", () => {
+  nav.classList.toggle("active");
+});
