@@ -48,16 +48,33 @@ html {
   border-bottom: 2px solid #ff6f00;
 }
 
-.nav-links a span {
-  display: none;
-}
-
 /* DESKTOP MENU */
 .nav-links {
   display: flex;
   gap: 25px;
 }
 
+/* ICONS (SVG) */
+.icon {
+  display: none;
+}
+
+.icon svg {
+  width: 20px;
+  height: 20px;
+  fill: #2e7d32;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #2e7d32;
+}
+
+.nav-links a:hover .icon svg {
+  fill: #ff6f00;
+}
+
+/* LANGUAGE SWITCH */
 .lang-switch span {
   margin-left: 10px;
   cursor: pointer;
@@ -91,34 +108,31 @@ html {
     background: #fff;
     flex-direction: column;
     align-items: center;
-    transition: max-height 0.4s ease, padding 0.3s;
-  }
 
-  /* 🔥 ANIMATION */
+    /* ✅ ANIMATION (FIXED) */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease;
   }
 
   .nav-links a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
 
-  padding: 15px;
-  width: 100%;
-  border-bottom: 1px solid #eee;
-}
+    padding: 15px;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+  }
 
-.nav-links a span {
-    display: inline;
+  /* ✅ SHOW ICONS ONLY ON MOBILE */
+  .icon {
+    display: inline-flex;
   }
 
   .nav-links.active {
     max-height: 500px;
-    color: #2e7d32;
-    border-bottom: 2px solid #ff6f00;
   }
 }
 
