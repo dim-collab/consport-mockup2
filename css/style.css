@@ -85,6 +85,11 @@ html {
   transition-delay: 0.05s;
 }
 
+.nav-links a.active {
+  color: #2e7d32;
+  transform: translateX(4px);
+}
+
 .nav-links a.active::after {
   width: 100%;
 }
