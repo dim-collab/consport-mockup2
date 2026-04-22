@@ -65,6 +65,41 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // ===== CLOSE MENU ON CLICK =====
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("active");
+    });
+  });
+
+  // ===== ACTIVE MENU (SMOOTH / PRO) =====
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  if (sections.length > 0 && navLinks.length > 0) {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => {
+              link.classList.remove("active");
+
+              if (link.getAttribute("href") === "#" + entry.target.id) {
+                link.classList.add("active");
+              }
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+        rootMargin: "-80px 0px -40% 0px"
+      }
+    );
+
+    sections.forEach(section => observer.observe(section));
+  }
+
 });
 
 // NAVBAR SHADOW
@@ -95,31 +130,4 @@ if (document.querySelectorAll(".fade-in").length > 0) {
   );
 
   faders.forEach(el => appearOnScroll.observe(el));
-}
-
-// ===== ACTIVE MENU (SMOOTH / PRO) =====
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav-links a");
-
-if (sections.length > 0 && navLinks.length > 0) {
-  const observer = new IntersectionObserver(
-    entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navLinks.forEach(link => {
-            link.classList.remove("active");
-
-            if (link.getAttribute("href") === "#" + entry.target.id) {
-              link.classList.add("active");
-            }
-          });
-        }
-      });
-    },
-    {
-      threshold: 0.6 // 🔥 controls when it activates
-    }
-  );
-
-  sections.forEach(section => observer.observe(section));
 }
