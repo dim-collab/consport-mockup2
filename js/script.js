@@ -97,28 +97,29 @@ if (document.querySelectorAll(".fade-in").length > 0) {
   faders.forEach(el => appearOnScroll.observe(el));
 }
 
-// ACTIVE MENU
+// ===== ACTIVE MENU (SMOOTH / PRO) =====
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll(".nav-links a");
 
 if (sections.length > 0 && navLinks.length > 0) {
-  window.addEventListener("scroll", () => {
-    let current = "";
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => {
+            link.classList.remove("active");
 
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 100;
+            if (link.getAttribute("href") === "#" + entry.target.id) {
+              link.classList.add("active");
+            }
+          });
+        }
+      });
+    },
+    {
+      threshold: 0.6 // 🔥 controls when it activates
+    }
+  );
 
-      if (window.scrollY >= sectionTop) {
-        current = section.getAttribute("id");
-      }
-    });
-
-    navLinks.forEach(a => {
-      a.classList.remove("active");
-      if (a.getAttribute("href") === "#" + current) {
-        a.classList.add("active");
-      }
-    });
-  });
+  sections.forEach(section => observer.observe(section));
 }
-
