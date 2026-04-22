@@ -118,3 +118,16 @@ if (sections.length > 0 && navLinks.length > 0) {
     });
   });
 }
+
+// OVERLAY MENU TOGGLE
+const menuToggle = document.querySelector(".menu-toggle");
+const overlayMenu = document.querySelector(".overlay-menu");
+const closeMenu = document.querySelector(".close-menu");
+
+menuToggle.addEventListener("click", () => {
+  overlayMenu.classList.add("active");
+});
+
+closeMenu.addEventListener("click", () => {
+  overlayMenu.classList.remove("active");
+});
