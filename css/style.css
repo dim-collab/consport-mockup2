@@ -369,3 +369,62 @@ html {
     grid-template-columns: 1fr;
   }
 }
+
+/* OVERLAY MENU */
+.overlay-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #2e7d32, #1b5e20);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-100%);
+  transition: 0.5s ease;
+  z-index: 999;
+}
+
+/* ACTIVE STATE */
+.overlay-menu.active {
+  transform: translateY(0);
+}
+
+/* MENU LINKS */
+.overlay-links {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+}
+
+.overlay-links a {
+  font-size: 28px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.overlay-links a:hover {
+  color: #ff6f00;
+  transform: translateX(5px);
+}
+
+/* CLOSE BUTTON */
+.close-menu {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+  font-size: 28px;
+  cursor: pointer;
+}
