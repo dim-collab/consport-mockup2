@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===== CLOSE MENU ON CLICK =====
   document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
-      nav.classList.remove("active");
+       document.querySelector(".nav-links").classList.remove("active");
     });
   });
 
@@ -92,27 +92,13 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       },
       {
-        threshold: 0.5,
-        rootMargin: "-80px 0px -40% 0px"
+        threshold: 0.6,
+        rootMargin: "-100px 0px -40% 0px"
       }
     );
 
     sections.forEach(section => observer.observe(section));
   }
-
-});
-
-// NAVBAR SHADOW
-window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar");
-
-  if (navbar) {
-    navbar.style.boxShadow =
-      window.scrollY > 50
-        ? "0 2px 10px rgba(0,0,0,0.1)"
-        : "none";
-  }
-});
 
 // FADE-IN
 if (document.querySelectorAll(".fade-in").length > 0) {
@@ -131,3 +117,18 @@ if (document.querySelectorAll(".fade-in").length > 0) {
 
   faders.forEach(el => appearOnScroll.observe(el));
 }
+
+  
+});
+
+// NAVBAR SHADOW
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
+
+  if (navbar) {
+    navbar.style.boxShadow =
+      window.scrollY > 50
+        ? "0 2px 10px rgba(0,0,0,0.1)"
+        : "none";
+  }
+});
