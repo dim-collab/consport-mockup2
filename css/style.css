@@ -54,6 +54,17 @@ html {
   gap: 25px;
 }
 
+.lang-switch span {
+  margin-left: 10px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.lang-switch .active-lang {
+  opacity: 1;
+  font-weight: bold;
+}
+
 /* HAMBURGER */
 .menu-toggle {
   display: none;
@@ -97,6 +108,8 @@ html {
 
   .nav-links.active {
     max-height: 500px;
+    color: #2e7d32;
+    border-bottom: 2px solid #ff6f00;
   }
 }
 
