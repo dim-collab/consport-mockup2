@@ -63,7 +63,11 @@ html {
   width: 20px;
   height: 20px;
   fill: #2e7d32;
-  transition: 0.3s;
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.nav-links a {
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -72,6 +76,7 @@ html {
 
 .nav-links a:hover .icon svg {
   fill: #ff6f00;
+  transform: translateX(4px) scale(1.1);
 }
 
 /* LANGUAGE SWITCH */
