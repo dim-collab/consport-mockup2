@@ -48,6 +48,10 @@ html {
   border-bottom: 2px solid #ff6f00;
 }
 
+.nav-links a span {
+  display: none;
+}
+
 /* DESKTOP MENU */
 .nav-links {
   display: flex;
@@ -100,11 +104,16 @@ html {
   display: flex;
   align-items: center;
   gap: 8px;
+  justify-content: center;
 
   padding: 15px;
   width: 100%;
   border-bottom: 1px solid #eee;
 }
+
+.nav-links a span {
+    display: inline;
+  }
 
   .nav-links.active {
     max-height: 500px;
