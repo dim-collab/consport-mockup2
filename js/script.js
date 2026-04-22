@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===== CLOSE MENU ON CLICK =====
   document.querySelectorAll(".nav-links a").forEach(link => {
     link.addEventListener("click", () => {
-       document.querySelector(".nav-links").classList.remove("active");
+       if (nav) nav.classList.remove("active");
     });
   });
 
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver(
       entries => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
             navLinks.forEach(link => {
               link.classList.remove("active");
 
@@ -100,15 +100,16 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach(section => observer.observe(section));
   }
 
-// FADE-IN
-if (document.querySelectorAll(".fade-in").length > 0) {
-  const faders = document.querySelectorAll(".fade-in");
+// ===== FADE-IN =====
+const faders = document.querySelectorAll(".fade-in");
 
+if (faders.length > 0) {
   const appearOnScroll = new IntersectionObserver(
-    (entries) => {
+    (entries, observer) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("show");
+          observer.unobserve(entry.target); // 🔥 run once only
         }
       });
     },
@@ -117,7 +118,6 @@ if (document.querySelectorAll(".fade-in").length > 0) {
 
   faders.forEach(el => appearOnScroll.observe(el));
 }
-
   
 });
 
