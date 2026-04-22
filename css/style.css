@@ -43,11 +43,6 @@ html {
   color: #2e7d32;
 }
 
-.nav-links a.active {
-  color: #2e7d32;
-  border-bottom: 2px solid #ff6f00;
-}
-
 /* DESKTOP MENU */
 .nav-links {
   display: flex;
@@ -67,16 +62,41 @@ html {
 }
 
 .nav-links a {
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative; /* 🔥 REQUIRED for underline */
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -5px;
+
+  width: 0;
+  height: 2px;
+  background: #ff6f00;
+
+  transition: width 0.3s ease, transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  transition-delay: 0.05s;
+}
+
+.nav-links a.active::after {
+  width: 100%;
 }
 
 .nav-links a:hover {
   color: #2e7d32;
+  transform: translateX(4px);
 }
 
 .nav-links a:hover .icon svg {
   fill: #ff6f00;
-  transform: translateX(4px) scale(1.1);
+  transform: scale(1.1);
 }
 
 /* LANGUAGE SWITCH */
