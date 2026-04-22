@@ -98,6 +98,9 @@ if (document.querySelectorAll(".fade-in").length > 0) {
 }
 
 // ACTIVE MENU
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links a");
+
 if (sections.length > 0 && navLinks.length > 0) {
   window.addEventListener("scroll", () => {
     let current = "";
@@ -105,7 +108,7 @@ if (sections.length > 0 && navLinks.length > 0) {
     sections.forEach(section => {
       const sectionTop = section.offsetTop - 100;
 
-      if (scrollY >= sectionTop) {
+      if (window.scrollY >= sectionTop) {
         current = section.getAttribute("id");
       }
     });
@@ -119,15 +122,3 @@ if (sections.length > 0 && navLinks.length > 0) {
   });
 }
 
-// OVERLAY MENU TOGGLE
-const menuToggle = document.querySelector(".menu-toggle");
-const overlayMenu = document.querySelector(".overlay-menu");
-const closeMenu = document.querySelector(".close-menu");
-
-menuToggle.addEventListener("click", () => {
-  overlayMenu.classList.add("active");
-});
-
-closeMenu.addEventListener("click", () => {
-  overlayMenu.classList.remove("active");
-});
