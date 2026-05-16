@@ -44,6 +44,31 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(targetSection);
 }
 
+// ===== HIDE CTA AT PAGE END =====
+const cta = document.querySelector(".cta");
+const whySection = document.querySelector(".why-consport");
+
+if (cta && whySection) {
+
+  const ctaObserver = new IntersectionObserver(
+    ([entry]) => {
+
+      if (entry.isIntersecting) {
+        cta.classList.add("hide-cta");
+      } else {
+        cta.classList.remove("hide-cta");
+      }
+
+    },
+    {
+      threshold: 0.3
+    }
+  );
+
+  ctaObserver.observe(whySection);
+}
+
+  
   // ===== NAVBAR SCROLL CLASS =====
   window.addEventListener("scroll", () => {
     const navbar = document.querySelector(".navbar");
