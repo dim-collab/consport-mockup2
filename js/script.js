@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ===== NAVBAR FOOTER BLEND (KDF STYLE) =====
   const navbar = document.querySelector(".navbar");
-  const ctaSection = document.querySelector("#cta");
+  const ctaSection = document.querySelector(".why-consport");
 
   if (navbar && ctaSection) {
     const observer = new IntersectionObserver(
