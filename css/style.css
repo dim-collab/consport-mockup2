@@ -26,6 +26,12 @@ html {
   background: #fff;
   border-bottom: 3px solid #2e7d32;
   padding: 15px 0;
+
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  transition: all 0.3s ease;
+
 }
 
 .nav-flex {
@@ -109,6 +115,21 @@ html {
 .nav-links a:hover .icon svg {
   fill: #ff6f00;
   transform: scale(1.1);
+}
+
+/* ===== NAVBAR FOOTER STATE (KDF STYLE) ===== */
+.navbar.at-footer {
+  background: #2e7d32;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+.navbar.at-footer a {
+  color: #fff;
+}
+
+.navbar.at-footer .logo {
+  color: #fff;
 }
 
 /* LANGUAGE SWITCH */
