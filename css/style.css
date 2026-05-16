@@ -418,7 +418,8 @@ html {
   background: #fff;
 
   overflow: hidden;
-
+   max-height: 400px;
+  
   transition:
     opacity 0.5s ease,
     max-height 0.6s ease,
