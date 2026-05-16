@@ -23,8 +23,9 @@ html {
 
 /* NAVBAR */
 .navbar {
-  background: #fff;
-  border-bottom: 3px solid #2e7d32;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(46,125,50,0.15);
   padding: 15px 0;
 
   position: sticky;
@@ -120,8 +121,9 @@ html {
 
 /* ===== NAVBAR FOOTER STATE (KDF STYLE) ===== */
 .navbar.at-footer {
-  background: #2e7d32;
-  border-bottom: none;
+  background: rgba(46,125,50,0.96);
+  backdrop-filter: blur(0px);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   box-shadow: none;
 }
 
@@ -131,6 +133,14 @@ html {
 
 .navbar.at-footer .logo {
   color: #fff;
+}
+
+.navbar.at-footer .icon svg {
+  fill: #fff;
+}
+
+.navbar.at-footer .nav-links a:hover .icon svg {
+  fill: #ffcc80;
 }
 
 /* LANGUAGE SWITCH */
@@ -662,7 +672,7 @@ html {
 .why-consport {
   background-image:
     linear-gradient(rgba(46,125,50,0.85), rgba(46,125,50,0.85)),
-    url('./images/green-grass-texture-close-up.jpg');
+    url('../images/green-grass-texture-close-up.jpg');
 
   background-size: cover;
   background-position: center;
@@ -672,6 +682,8 @@ html {
   padding: 100px 10%;
   text-align: center;
   color: white;
+
+  margin-top: -1px;
 }
 
 .why-consport h2 {
