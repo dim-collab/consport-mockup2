@@ -21,6 +21,25 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     update();
+
+    // ===== NAVBAR FOOTER BLEND (KDF STYLE) =====
+const navbar = document.querySelector(".navbar");
+const ctaSection = document.querySelector("#cta");
+
+if (navbar && ctaSection) {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        navbar.classList.add("at-footer");
+      } else {
+        navbar.classList.remove("at-footer");
+      }
+    },
+    { threshold: 0.25 }
+  );
+
+  observer.observe(ctaSection);
+}
   });
 
   // ===== HERO SLIDER =====
