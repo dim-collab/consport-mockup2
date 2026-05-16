@@ -26,7 +26,7 @@ html {
   background: rgba(255,255,255,0.96);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(46,125,50,0.15);
-  padding: 15px 0;
+  padding: 20px 0;
 
   position: sticky;
   top: 0;
@@ -723,6 +723,7 @@ html {
 .why-icon svg {
   width: 32px !important;
   height: 32px !important;
+  display: bock;
   fill: #fff;
 }
 
