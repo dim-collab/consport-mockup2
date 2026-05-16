@@ -164,14 +164,3 @@ if (faders.length > 0) {
   
 });
 
-// NAVBAR SHADOW
-window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar");
-
-  if (navbar) {
-    navbar.style.boxShadow =
-      window.scrollY > 50
-        ? "0 2px 10px rgba(0,0,0,0.1)"
-        : "none";
-  }
-});
