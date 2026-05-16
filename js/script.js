@@ -4,7 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const counters = document.querySelectorAll(".stats h3");
 
   counters.forEach(counter => {
-    let target = parseInt(counter.innerText);
+    let original = counter.innerText;
+    let target = parseInt(original);
+    let suffix = original.includes('%') ? '%' : '+';
+    
     let count = 0;
 
     let update = () => {
@@ -13,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         counter.innerText = count;
         requestAnimationFrame(update);
       } else {
-        counter.innerText = target + (counter.innerText.includes('%') ? '%' : '+');
+        counter.innerText = target + suffix;
       }
     };
 
