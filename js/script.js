@@ -25,22 +25,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // ===== NAVBAR FOOTER BLEND (KDF STYLE) =====
   const navbar = document.querySelector(".navbar");
-  const ctaSection = document.querySelector(".why-consport");
+  const targetSection = document.querySelector(".why-consport");
 
-  if (navbar && ctaSection) {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          navbar.classList.add("at-footer");
-        } else {
-          navbar.classList.remove("at-footer");
-        }
-      },
-      { threshold: 0.25 }
-    );
+  if (navbar && targetSection) {
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.intersectionRatio > 0.8) {
+        navbar.classList.add("at-footer");
+      } else {
+        navbar.classList.remove("at-footer");
+      }
+    },
+    {
+      threshold: [0.8]
+    }
+  );
 
-    observer.observe(ctaSection);
-  }
+  observer.observe(targetSection);
+}
 
   // ===== NAVBAR SCROLL CLASS =====
   window.addEventListener("scroll", () => {
