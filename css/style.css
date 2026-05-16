@@ -660,12 +660,13 @@ html {
 ========================================= */
 
 .why-consport {
-  background:
-    linear-gradient(rgba(46,125,50,0.9), rgba(46,125,50,0.9)),
-    url('../images/grass-bg.jpg');
+  background-image:
+    linear-gradient(rgba(46,125,50,0.85), rgba(46,125,50,0.85)),
+    url('./images/green-grass-texture-close-up.jpg');
 
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   background-attachment: fixed;
 
   padding: 100px 10%;
@@ -695,7 +696,8 @@ html {
 }
 
 .why-icon {
-  font-size: 56px;
+  font-size: 64px;
+  color: #fff;
   margin-bottom: 20px;
 }
 
