@@ -61,7 +61,7 @@ if (cta && whySection) {
 
     },
     {
-      threshold: 0.3
+      threshold: 0.15
     }
   );
 
