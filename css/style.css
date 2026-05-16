@@ -414,7 +414,6 @@ html {
 }
 
 /* CTA */
-/* CTA */
 .cta {
   padding: 80px 10%;
   text-align: center;
@@ -425,6 +424,7 @@ html {
 .cta.hide-cta {
   display: none;
 }
+
 .cta h2 {
   margin-bottom: 20px;
   color: #2e7d32;
