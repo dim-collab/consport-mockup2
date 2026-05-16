@@ -196,13 +196,6 @@ html {
 }
 
 /* HERO */
-.hero {
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  padding-left: 10%;
-  background: linear-gradient(120deg, #e8f5e9, #fff3e0);
-}
 
 .hero h1 {
   font-size: 48px;
