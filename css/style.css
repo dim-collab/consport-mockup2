@@ -412,34 +412,17 @@ html {
 }
 
 /* CTA */
+/* CTA */
 .cta {
   padding: 80px 10%;
   text-align: center;
   background: #fff;
-
-  overflow: hidden;
-   max-height: 400px;
-  
-  transition:
-    opacity 0.5s ease,
-    max-height 0.6s ease,
-    padding 0.6s ease,
-    margin 0.6s ease;
 }
 
-/* όταν φτάνουμε στο footer */
+/* HIDE CTA AT PAGE END */
 .cta.hide-cta {
-  opacity: 0;
-
-  max-height: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-
-  margin: 0;
-
-  pointer-events: none;
+  display: none;
 }
-
 .cta h2 {
   margin-bottom: 20px;
   color: #2e7d32;
