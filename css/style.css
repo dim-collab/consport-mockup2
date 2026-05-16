@@ -469,6 +469,11 @@ html {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
+
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 
 .gallery-item img {
