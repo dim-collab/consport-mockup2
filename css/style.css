@@ -589,3 +589,154 @@ html {
   }
 
 }
+
+/* =========================================
+   COMPLETED PROJECTS
+========================================= */
+
+.completed-projects {
+  padding: 90px 10%;
+  background: #fff;
+  text-align: center;
+}
+
+.completed-projects h2 {
+  color: #2e7d32;
+  margin-bottom: 50px;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.project-card {
+  background: #fff;
+  overflow: hidden;
+  transition: 0.35s ease;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  display: block;
+}
+
+.project-card h3 {
+  padding: 20px;
+  font-size: 20px;
+  color: #444;
+  font-weight: 600;
+}
+
+.projects-btn {
+  display: inline-block;
+  margin-top: 45px;
+  padding: 14px 38px;
+  background: #4caf50;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 4px;
+  transition: 0.3s ease;
+}
+
+.projects-btn:hover {
+  background: #2e7d32;
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   WHY CONSPORT
+========================================= */
+
+.why-consport {
+  background:
+    linear-gradient(rgba(46,125,50,0.9), rgba(46,125,50,0.9)),
+    url('../images/grass-bg.jpg');
+
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  padding: 100px 10%;
+  text-align: center;
+  color: white;
+}
+
+.why-consport h2 {
+  margin-bottom: 60px;
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+  align-items: start;
+}
+
+.why-item {
+  transition: 0.3s ease;
+}
+
+.why-item:hover {
+  transform: translateY(-8px);
+}
+
+.why-icon {
+  font-size: 56px;
+  margin-bottom: 20px;
+}
+
+.why-item p {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 992px) {
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .projects-grid,
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .completed-projects h2,
+  .why-consport h2 {
+    font-size: 28px;
+  }
+
+  .project-card img {
+    height: 220px;
+  }
+
+  .why-consport {
+    background-attachment: scroll;
+  }
+}
