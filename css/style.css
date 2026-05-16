@@ -124,8 +124,12 @@ html {
 
 /* ===== NAVBAR FOOTER STATE (KDF STYLE) ===== */
 .navbar.at-footer {
-  background: rgba(46,125,50,0.96);
-  backdrop-filter: blur(0px);
+  background: linear-gradient(
+    to bottom,
+    rgba(46,125,50,0.2),
+    rgba(46,125,50,0.95)
+  );
+  backdrop-filter: blur(6px);
   border-bottom: 1px solid rgba(255,255,255,0.08);
   box-shadow: none;
 }
@@ -686,7 +690,7 @@ html {
   text-align: center;
   color: white;
 
-  margin-top: -1px;
+  margin-top: 0px;
 }
 
 .why-consport h2 {
