@@ -375,40 +375,6 @@ html {
   transform: translateY(0);
 }
 
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  cursor: pointer;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: #fff;
-    width: 100%;
-    display: none;
-    flex-direction: column;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  }
-
-  .nav-links a {
-    padding: 15px;
-    display: block;
-    border-bottom: 1px solid #eee;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-}
 
 /* HERO ANIMATION */
 .hero-title,
@@ -432,7 +398,9 @@ html {
     opacity: 1;
     transform: translateY(0);
   }
+}
 
+/* GALLERY */
   .gallery {
   padding: 80px 10%;
   text-align: center;
@@ -479,7 +447,6 @@ html {
 
 .gallery-item:hover .overlay {
   opacity: 1;
-}
 }
 
 @media (max-width: 768px) {
