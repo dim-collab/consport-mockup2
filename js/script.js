@@ -24,39 +24,60 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // ===== HERO SLIDER =====
-  const slides = document.querySelectorAll(".slide");
+ const slides = document.querySelectorAll(".slide");
+const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
 
-  if (slides.length > 0) {
-    let index = 0;
+let index = 0;
+let interval;
 
-    function showSlide(i) {
-      slides.forEach((slide, idx) => {
-        slide.style.transform = `translateX(${(idx - i) * 100}%)`;
-      });
-    }
+function showSlide(i) {
+  slides.forEach(slide => slide.classList.remove("active"));
+  slides[i].classList.add("active");
+  index = i;
+}
 
-    const next = document.getElementById("next");
-    const prev = document.getElementById("prev");
+function nextSlide() {
+  index = (index + 1) % slides.length;
+  showSlide(index);
+}
 
-    if (next && prev) {
-      next.onclick = () => {
-        index = (index + 1) % slides.length;
-        showSlide(index);
-      };
+function prevSlide() {
+  index = (index - 1 + slides.length) % slides.length;
+  showSlide(index);
+}
 
-      prev.onclick = () => {
-        index = (index - 1 + slides.length) % slides.length;
-        showSlide(index);
-      };
-    }
+// autoplay
+function startAuto() {
+  interval = setInterval(nextSlide, 5000);
+}
 
-    setInterval(() => {
-      index = (index + 1) % slides.length;
-      showSlide(index);
-    }, 5000);
+function stopAuto() {
+  clearInterval(interval);
+}
 
-    showSlide(index);
-  }
+// buttons
+nextBtn?.addEventListener("click", () => {
+  nextSlide();
+  stopAuto();
+  startAuto();
+});
+
+prevBtn?.addEventListener("click", () => {
+  prevSlide();
+  stopAuto();
+  startAuto();
+});
+
+// keyboard
+document.addEventListener("keydown", (e) => {
+  if (e.key === "ArrowRight") nextSlide();
+  if (e.key === "ArrowLeft") prevSlide();
+});
+
+// init
+showSlide(0);
+startAuto();
 
   // ===== MOBILE MENU =====
   const toggle = document.querySelector(".menu-toggle");
