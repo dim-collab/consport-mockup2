@@ -707,16 +707,27 @@ html {
   transform: translateY(-8px);
 }
 
-.why-icon {
-  font-size: 64px;
-  color: #fff;
-  margin-bottom: 20px;
-}
-
 .why-item p {
   font-size: 18px;
   font-weight: 600;
   line-height: 1.5;
+}
+
+.why-icon {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.why-icon svg {
+  width: 60px;
+  height: 60px;
+  fill: #fff;
+}
+
+.why-icon svg path {
+  fill: #fff;
 }
 
 /* =========================================
@@ -755,7 +766,3 @@ html {
   }
 }
 
-.why-icon img,
-.why-icon svg {
-  filter: brightness(0) invert(1);
-}
