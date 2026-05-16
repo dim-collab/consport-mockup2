@@ -177,5 +177,3 @@ if (faders.length > 0) {
   faders.forEach(el => appearOnScroll.observe(el));
 }
   
-});
-
