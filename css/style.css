@@ -754,3 +754,8 @@ html {
     background-attachment: scroll;
   }
 }
+
+.why-icon img,
+.why-icon svg {
+  filter: brightness(0) invert(1);
+}
