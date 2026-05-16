@@ -44,30 +44,24 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(targetSection);
 }
 
-// ===== HIDE CTA AT PAGE END =====
+  // ===== HIDE CTA AT PAGE BOTTOM =====
 const cta = document.querySelector(".cta");
-const whySection = document.querySelector(".why-consport");
 
-if (cta && whySection) {
+window.addEventListener("scroll", () => {
 
-  const ctaObserver = new IntersectionObserver(
-    ([entry]) => {
+  const scrollPosition =
+    window.innerHeight + window.scrollY;
 
-      if (entry.isIntersecting) {
-        cta.classList.add("hide-cta");
-      } else {
-        cta.classList.remove("hide-cta");
-      }
+  const pageBottom =
+    document.body.offsetHeight - 120;
 
-    },
-    {
-      threshold: 0.15
-    }
-  );
+  if (scrollPosition >= pageBottom) {
+    cta?.classList.add("hide-cta");
+  } else {
+    cta?.classList.remove("hide-cta");
+  }
 
-  ctaObserver.observe(whySection);
-}
-
+});
   
   // ===== NAVBAR SCROLL CLASS =====
   window.addEventListener("scroll", () => {
