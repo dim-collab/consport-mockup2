@@ -14,6 +14,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* CONTAINER */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
 /* NAVBAR */
 .navbar {
   background: #fff;
@@ -512,4 +519,33 @@ html {
 .menu-toggle {
   font-size: 28px;
   cursor: pointer;
+}
+
+@media (max-width: 768px) {
+
+  .hero-content h1 {
+    font-size: 38px;
+    line-height: 1.2;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .hero-slider,
+  .hero {
+    height: 75vh;
+  }
+
+  .hero-content {
+    left: 6%;
+    max-width: 90%;
+  }
+
+  .cards,
+  .stats-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
 }
