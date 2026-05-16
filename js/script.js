@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let original = counter.innerText;
     let target = parseInt(original);
     let suffix = original.includes('%') ? '%' : '+';
-    
+
     let count = 0;
 
     let update = () => {
@@ -21,26 +21,41 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     update();
-
-    // ===== NAVBAR FOOTER BLEND (KDF STYLE) =====
-const navbar = document.querySelector(".navbar");
-const ctaSection = document.querySelector("#cta");
-
-if (navbar && ctaSection) {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        navbar.classList.add("at-footer");
-      } else {
-        navbar.classList.remove("at-footer");
-      }
-    },
-    { threshold: 0.25 }
-  );
-
-  observer.observe(ctaSection);
-}
   });
+
+  // ===== NAVBAR FOOTER BLEND (KDF STYLE) =====
+  const navbar = document.querySelector(".navbar");
+  const ctaSection = document.querySelector("#cta");
+
+  if (navbar && ctaSection) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          navbar.classList.add("at-footer");
+        } else {
+          navbar.classList.remove("at-footer");
+        }
+      },
+      { threshold: 0.25 }
+    );
+
+    observer.observe(ctaSection);
+  }
+
+  // ===== NAVBAR SCROLL CLASS =====
+  window.addEventListener("scroll", () => {
+    const navbar = document.querySelector(".navbar");
+
+    if (navbar) {
+      if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+      } else {
+        navbar.classList.remove("scrolled");
+      }
+    }
+  });
+
+});
 
   // ===== HERO SLIDER =====
  const slides = document.querySelectorAll(".slide");
