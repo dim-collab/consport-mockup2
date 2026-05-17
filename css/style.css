@@ -63,8 +63,8 @@ html {
 .navbar.at-footer {
   background: linear-gradient(
     to bottom,
-    rgba(255,255,255,0.92),
-    rgba(46,125,50,0.06)
+    rgba(255,255,255,0.95),
+    rgba(46,125,50,0.12)
   );
 }
 
