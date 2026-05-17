@@ -417,17 +417,13 @@ html {
 .cta {
   padding: 80px 10%;
   text-align: center;
-  background: #fff;
-}
-
-/* HIDE CTA AT PAGE END */
-.cta.hide-cta {
-  display: none;
+  background: #2e7d32;
+  color: #fff;
 }
 
 .cta h2 {
   margin-bottom: 20px;
-  color: #2e7d32;
+  color: #fff;
 }
 
 .fade-in {
