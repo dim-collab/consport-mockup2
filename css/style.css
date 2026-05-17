@@ -33,7 +33,6 @@ html {
   align-items: center;
 
   position: sticky;
-  overflow: hidden;
   top: 0;
   z-index: 999;
   transition: all 0.3s ease;
