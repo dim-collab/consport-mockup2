@@ -42,13 +42,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   
   // ===== NAVBAR SCROLL CLASS =====
-  const navbar = document.querySelector(".navbar");
 
   window.addEventListener("scroll", () => {
-    if (!navbar) return;
+  if (!navbar) return;
 
-    navbar.classList.toggle("scrolled", window.scrollY > 50);
-  });
+  const scrollY = window.scrollY;
+
+  navbar.classList.toggle("scrolled", scrollY > 30);
+});
 
 });
 
