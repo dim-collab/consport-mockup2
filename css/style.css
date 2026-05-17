@@ -60,14 +60,6 @@ html {
   box-shadow: 0 10px 25px rgba(0,0,0,0.08);
 }
 
-.navbar.at-footer {
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.95),
-    rgba(46,125,50,0.12)
-  );
-}
-
 .nav-flex {
   display: flex;
   justify-content: space-between;
@@ -160,9 +152,11 @@ html {
 
 /* ===== NAVBAR FOOTER STATE (KDF STYLE) ===== */
 .navbar.at-footer {
-  background: rgba(255, 255, 255, 0.96);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
-  position: sticky;
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.95),
+    rgba(46,125,50,0.12)
+  );
 }
 
 .navbar.at-footer::before {
