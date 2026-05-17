@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         navbar.classList.toggle("at-footer", entry.isIntersecting);
       },
       {
-        threshold: 0.8
+        threshold: 0.2
       }
     );
 
