@@ -78,6 +78,7 @@ function prevSlide() {
 
 // autoplay
 function startAuto() {
+  if (interval) clearInterval(interval);
   interval = setInterval(nextSlide, 5000);
 }
 
