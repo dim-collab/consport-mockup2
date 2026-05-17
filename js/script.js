@@ -44,24 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
   observer.observe(targetSection);
 }
 
-  // ===== HIDE CTA AT PAGE BOTTOM =====
-const cta = document.querySelector(".cta");
-
-window.addEventListener("scroll", () => {
-
-  const scrollPosition =
-    window.innerHeight + window.scrollY;
-
-  const pageBottom =
-    document.body.offsetHeight - 120;
-
-  if (scrollPosition >= pageBottom) {
-    cta?.classList.add("hide-cta");
-  } else {
-    cta?.classList.remove("hide-cta");
-  }
-
-});
   
   // ===== NAVBAR SCROLL CLASS =====
   window.addEventListener("scroll", () => {
