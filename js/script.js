@@ -28,34 +28,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const targetSection = document.querySelector(".why-consport");
 
   if (navbar && targetSection) {
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.intersectionRatio > 0.8) {
-        navbar.classList.add("at-footer");
-      } else {
-        navbar.classList.remove("at-footer");
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        navbar.classList.toggle("at-footer", entry.isIntersecting);
+      },
+      {
+        threshold: 0.4
       }
-    },
-    {
-      threshold: [0.8]
-    }
-  );
+    );
 
   observer.observe(targetSection);
-}
+  }
 
   
   // ===== NAVBAR SCROLL CLASS =====
-  window.addEventListener("scroll", () => {
-    const navbar = document.querySelector(".navbar");
+  const navbar = document.querySelector(".navbar");
 
-    if (navbar) {
-      if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-      } else {
-        navbar.classList.remove("scrolled");
-      }
-    }
+  window.addEventListener("scroll", () => {
+    if (!navbar) return;
+
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
   });
 
 });
@@ -66,7 +58,7 @@ const nextBtn = document.getElementById("next");
 const prevBtn = document.getElementById("prev");
 
 let index = 0;
-let interval;
+let interval = null;
 
 function showSlide(i) {
   slides.forEach(slide => slide.classList.remove("active"));
